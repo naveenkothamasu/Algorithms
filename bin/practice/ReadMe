@@ -1,0 +1,43 @@
+Heap is an array with root val >= children val
+Binary Search Tree (BST) - Tree with pointers and follows propert left<= root <right
+	Find min - O(height)
+	successor - O(height)
+In-order traversal of BST is the sorted order
+BST:
+	height of the tree = height of the root node
+	height of a node = longest path from it to leaf
+					= max(height of left child, height of right child)+1
+BST height can be O(n) - unbalanced, so fix it, how? AVL
+AVL:
+	For very node,
+	|Height of left child - Height of right child| <= 1
+	Q) Is AVL Balanced? [Balanced tree meaning height order of log or sizes in both the halves almost same]
+	Yes. 
+	Proof: Let h = height of the AVL tree
+			Let N(h) = min # of nodes in that tree.
+				N(h) = 1 + N(h-1)+ N(h-2) (Almost like a Fibonacci sequence)
+				N(h) < F(h) = fi^h/root(5);
+				h ~ logn  
+	Simpler: N(h) >= 1 + 2* N(h-2)
+		=> h ~ logn
+AVL Insert: 1. BST Insert
+			2. Walk up the tree from the inserted node while fixing AVL property by rotations (Single or Double)
+			
+AVL Sort: 1. Insert n items [O(n*logn)]
+			2. In-order traversal - O(n)
+-----------------------------------------------
+Abstract Data Types					Data Structure
+ - insert & delete					
+ - min								First two points/ Priority Queues --> Use heap 
+ - Successor & Predeccosr			All three operations? Balanced BST
+ ------------------------------------------------------------------------------------------------------------------------------------
+ HashTables
+ ADT: 
+ Dictionary = insert, delete, search - constant time O(1)? 
+ Data Structure:
+ 	1. Large Array: Awful lot of waste space or too large to fit into RAM
+ 	2. AVL? all operations in O(logn)
+ 	3. Hashing? But what is results into a linear list? Use Uniform Hashing
+ 
+ 	
+ 
